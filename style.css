@@ -1,37 +1,409 @@
+/* line 5, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+.remove {
+  display: none !important; }
+
+/* line 9, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
 body {
-	font-family: sans-serif;
-	font-weight: lighter;
-	background-color: #ecf0f1;
-	padding:0 0;
-	margin:0 0;
-}
+  padding: 0;
+  margin: 0;
+  font-family: 'Oxygen', sans-serif;
+  background: linear-gradient(45deg, #e7f1f5 0%, #e7f1f5 100%, #ffffff 100%); }
+  /* line 15, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  body > header {
+    background-color: #F8B000;
+    padding: 0.5em 2em;
+    box-sizing: border-box;
+    height: 3em;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    /* line 24, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    body > header a {
+      display: inline-block; }
+      /* line 27, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      body > header a img {
+        height: 2em;
+        vertical-align: middle; }
+
+/* line 34, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
 main {
-	
-	width:80%;
-	max-width: 40em;
-	background-color: white;
-	margin:2em auto;
+  margin: 0 auto;
+  text-align: center;
+  padding: 1rem;
+  max-width: 50em; }
 
-	padding:1em;
-}
-h1, h2 {
-	text-align:center;
-	font-weight: lighter;
+/* line 43, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+nav form {
+  text-align: center;
+  padding: 0.5em; }
+  /* line 47, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  nav form input {
+    height: 1.7em;
+    font-size: 1em;
+    border: none;
+    vertical-align: middle;
+    box-sizing: border-box; }
+    /* line 54, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    nav form input[type="text"] {
+      padding: 0.5em; }
+    /* line 59, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    nav form input[type="button"] {
+      background-repeat: no-repeat;
+      background-size: 1em;
+      background-position: center;
+      width: 2em; }
+/* line 70, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+nav ul {
+  padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  list-style-type: none; }
+  /* line 77, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  nav ul li {
+    -webkit-flex: 20%;
+        -ms-flex: 20%;
+            flex: 20%; }
+    /* line 79, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    nav ul li a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: white; }
 
-}
+/* line 88, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+.sideNav {
+  background: #6EC8E5;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 9;
+  width: 30vw;
+  max-width: 20em;
+  min-width: 15em;
+  right: -22em;
+  margin-top: 3rem;
+  padding-bottom: 3rem;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  transition: linear, right 0.2s linear;
+  box-shadow: 0 0 0 180vmax transparent; }
+  /* line 107, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .sideNav form {
+    margin: 0; }
+    /* line 111, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .sideNav form input[type="text"] {
+      width: 80%; }
+    /* line 115, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .sideNav form input[type="button"] {
+      background-image: url("static/images/search.svg");
+      background-color: white; }
+  /* line 121, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .sideNav ul {
+    -webkit-flex: 90%;
+        -ms-flex: 90%;
+            flex: 90%;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    /* line 124, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .sideNav ul li {
+      position: relative;
+      border-bottom: 2px solid #6EC8E5;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+              justify-content: space-around;
+      transition: background-color 0.5s ease-in-out; }
+      /* line 132, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .sideNav ul li:hover {
+        background-color: #007898; }
+      /* line 135, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .sideNav ul li a {
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%; }
 
-h2, h3 {
-	color:#2980b9 ;
-}
-article {
-	position: relative;
-}
-article img {
-	max-width:100%;
-}
-xmp {
-	background-color: #ecf0f1;
-	padding:.5em 1em;
-	border:2px solid #F7F7F7;
-}
+/* line 150, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+.regNav form input[type="button"] {
+  background-image: url("static/images/search.svg");
+  background-color: #6EC8E5; }
+/* line 160, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+.regNav ul li a {
+  padding: 0.7em;
+  background-color: #6EC8E5;
+  border-left: 2px solid #e7f1f5;
+  transition: background-color 0.5s; }
+  /* line 165, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .regNav ul li a:hover {
+    background-color: #007898; }
 
+/* line 172, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+.navOpen {
+  right: 0; }
+
+/* line 178, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+.list-template-wrapper {
+  text-align: left; }
+  /* line 180, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .list-template-wrapper h2 {
+    text-align: center;
+    background-color: white;
+    padding: 1rem; }
+  /* line 185, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .list-template-wrapper #price {
+    background-color: #6EC8E5;
+    display: block;
+    z-index: 8;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    width: 10rem;
+    box-sizing: border-box;
+    padding: 0.5rem 0;
+    text-align: center;
+    color: white; }
+  /* line 199, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .list-template-wrapper > ul {
+    list-style: none;
+    padding: 0; }
+    /* line 203, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .list-template-wrapper > ul > li {
+      text-decoration: none;
+      display: block;
+      color: black;
+      padding: 0.5rem 1rem;
+      position: relative;
+      background-color: white;
+      border-left: 0.5rem solid white;
+      transition: 0.2s ease-in-out;
+      margin: 1rem 0;
+      min-height: 10em; }
+      /* line 215, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .list-template-wrapper > ul > li:hover {
+        border-left: 0.5rem solid #6EC8E5; }
+      /* line 218, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .list-template-wrapper > ul > li h3 {
+        margin: 0.5rem 0;
+        font-size: 120%; }
+        /* line 221, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+        .list-template-wrapper > ul > li h3 a {
+          text-decoration: none;
+          color: black; }
+      /* line 226, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .list-template-wrapper > ul > li p {
+        margin: 0;
+        font-size: 0.8em;
+        color: #818181; }
+      /* line 231, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .list-template-wrapper > ul > li ul {
+        list-style-type: none;
+        padding: 0; }
+        /* line 234, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+        .list-template-wrapper > ul > li ul li {
+          border: 2px solid #6EC8E5;
+          padding: 0.2rem;
+          font-size: 1em;
+          margin: 0.5rem 0.5rem 0.5rem 0;
+          display: inline-block; }
+      /* line 242, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .list-template-wrapper > ul > li .img-container {
+        position: absolute;
+        right: 0;
+        width: 40%;
+        right: 0;
+        height: 100%;
+        top: 0;
+        max-width: 25em;
+        overflow: hidden; }
+        /* line 252, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+        .list-template-wrapper > ul > li .img-container img {
+          min-height: 100%;
+          min-width: 100%;
+          max-height: 120%; }
+      /* line 258, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .list-template-wrapper > ul > li #graph-container {
+        position: absolute;
+        bottom: 0.5rem;
+        left: 0.5rem;
+        height: 3em;
+        display: block;
+        width: 50%;
+        box-sizing: border-box;
+        height: 2em;
+        background-color: rgba(231, 241, 245, 0.5); }
+        /* line 269, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+        .list-template-wrapper > ul > li #graph-container p {
+          position: absolute;
+          bottom: 0.5em;
+          right: 0; }
+        /* line 274, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+        .list-template-wrapper > ul > li #graph-container div {
+          margin: 0.5em 0;
+          position: absolute; }
+        /* line 278, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+        .list-template-wrapper > ul > li #graph-container #percentageKoopPrijs {
+          background-color: #F8B000;
+          height: 1em;
+          z-index: 7;
+          left: 0;
+          margin: 0;
+          bottom: 0.5em; }
+        /* line 286, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+        .list-template-wrapper > ul > li #graph-container #gemiddeldPerc {
+          height: 2em;
+          border-right: 0.2rem solid black;
+          background-color: rgba(231, 241, 245, 0.7);
+          left: 0;
+          position: absolute;
+          bottom: 0;
+          margin: 0; }
+
+/* line 302, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+.detail-template-wrapper {
+  text-align: left;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  /* line 308, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .detail-template-wrapper > a {
+    -webkit-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    text-align: center;
+    background-color: #6EC8E5;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem; }
+  /* line 317, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .detail-template-wrapper > * {
+    background-color: white;
+    padding: 1rem;
+    margin: 0.5rem auto;
+    max-width: 50em;
+    box-sizing: borde-box; }
+  /* line 324, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .detail-template-wrapper header {
+    -webkit-flex: 10 100%;
+        -ms-flex: 10 100%;
+            flex: 10 100%; }
+    /* line 327, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper header h2 {
+      display: inline-block;
+      margin: 0; }
+    /* line 331, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper header h3 {
+      display: inline-block;
+      float: right;
+      vertical-align: middle; }
+    /* line 336, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper header h4 {
+      color: #8C8C8C; }
+  /* line 341, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .detail-template-wrapper .fotos {
+    -webkit-flex: 4 100%;
+        -ms-flex: 4 100%;
+            flex: 4 100%;
+    overflow: hidden;
+    background-color: white; }
+    /* line 345, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper .fotos img {
+      min-width: 100%; }
+  /* line 349, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .detail-template-wrapper article {
+    -webkit-flex: 4 100%;
+        -ms-flex: 4 100%;
+            flex: 4 100%; }
+    /* line 353, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper article label {
+      border-bottom: 2px solid #6EC8E5;
+      color: #6EC8E5;
+      width: 100%;
+      padding: 0.5rem;
+      text-align: center;
+      display: block; }
+      /* line 360, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .detail-template-wrapper article label:before {
+        content: 'lees meer'; }
+    /* line 364, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper article input[type='checkbox'] {
+      display: none; }
+      /* line 366, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .detail-template-wrapper article input[type='checkbox']:checked ~ p {
+        height: 100%; }
+      /* line 369, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .detail-template-wrapper article input[type='checkbox']:checked ~ label:before {
+        content: 'lees minder'; }
+    /* line 374, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper article p {
+      height: 5em;
+      transition: height 1s ease-in-out;
+      overflow: hidden; }
+  /* line 380, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  .detail-template-wrapper .kenmerken {
+    -webkit-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%; }
+    /* line 383, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper .kenmerken h5 {
+      color: #6EC8E5; }
+    /* line 386, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    .detail-template-wrapper .kenmerken ul li {
+      text-align: left;
+      border-bottom: 1px solid #DADADA;
+      width: 100%;
+      padding: 0.2rem; }
+      /* line 391, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+      .detail-template-wrapper .kenmerken ul li span {
+        float: right; }
+
+/* line 398, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+#chart {
+  text-align: center; }
+  /* line 402, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  #chart > * {
+    padding-top: 1em;
+    margin: 0 auto; }
+  /* line 407, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+  #chart rect {
+    fill: #6EC8E5;
+    transition: fill 0.2s; }
+    /* line 410, /Users/Schuurmans/Desktop/funda_browserTech/style.scss */
+    #chart rect:hover {
+      fill: #007898; }
