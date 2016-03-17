@@ -3,128 +3,195 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header>
-		<a href="/"><img src="static/images/funda.png" alt="Funda" class='logo'></a>
-		<a href="#menu" class='nav_button remove'><img src="static/images/interface.svg"  alt="menu" class="icon"></a>
-	</header>
-	<nav id="menu" class='regNav'>
-		<form>
-            <input type="text" placeholder="voer een stad in" required>
-            <input type="button" onclick='search.init();'>
-		</form>
-		<ul>
-			<li><a href="#list-amsterdam">Amsterdam</a></li>
-			<li><a href="#list-Rotterdam">Rotterdam</a></li>
-			<li><a href="#list-Leiden">Leiden</a></li>
-			<li><a href="#list-DenHaag">Den Haag</a></li>
-			<li><a href="#list-Eindhoven">Eindhoven</a></li>
-		</ul>
-	</nav>
-	<div id="chart"></div>
-	<main>
-		
-	</main>
-	<script id="loading-template" type="text/x-handlebars-template">
-	<div class="loading-container">
-		<img class='loadingGif' src="../../static/images/loading.gif">
-	</div>
-	</script>
-
-	<script id="list-template" type="text/x-handlebars-template">
-	<div class="list-template-wrapper">
 	
-		<h2>{{title}}</h2>
-		<!-- <div class='chart'>{{#list}}{{/list}}</div> -->
-	<ul>
-		{{#each objects}}
-			<li>
-				<section>
-					<h3><a href="#detail-{{Id}}">{{Adres}}</a></h3>
-					<p>Aangeboden sinds {{AangebodenSindsTekst}}</p>
-					<ul>
-						<li>{{Woonoppervlakte}} m2</li>
-						<li>{{AantalKamers}} kamers</li>
-						<li>{{Woonplaats}}</li>
-					</ul>
-					<h3 id="price">€{{Prijs.Koopprijs}}</h3>
-				</section>
-				<section id="graph-container">
-					<p>prijsverhouding buurt</p>
-						<div id="percentageKoopPrijs" style="width:{{percentageKoopPrijs}}%"></div>
-						<div id="gemiddeldPerc" style="width:{{../gemiddeldPerc}}%"></div>
+	
+	<main>
+		<section>
+			<h1>uitleg over de opdracht</h1>
+		</section>
 
-				</section>	
-				<div class="img-container">
-							<img src="{{FotoLargest}}">
-					</div>
-					
-			</li>
-		{{/each}}
-	</ul>
-	</div>
-	</script>
-	<script id="detail-template" type="text/x-handlebars-template">
-		<div class="detail-template-wrapper">
-			<header>
-				<h2>{{Adres}}</h2><h3>€{{Koopprijs}}</h3>
-				<h4>{{Postcode}} {{Plaats}}</h4>
+		<article>
+			<h2>HTML</h2>
+			<section id='audio' >
+				<h3>Audio</h3>
+				<h4>Over</h4>
+				<p>Het audio element wordt gebruikt om geluiden af te kunnen spelen op een webpagina. </p>
+				<audio controls>
+				  <source src="src/audio.ogg" type="audio/ogg">
+				  <source src="src/audio.mp3" type="audio/mpeg">
+				   <a href="src/audio.mp3">Download audio</a>
+				</audio>
+				<h4>browser support</h4>
+
+				<p>Het audio element wordt over het algemeen door de meeste browsers ondersteund. De bestandsformaten die het met zich meebrengt echter niet. Zie hieronder de "CanIUse" voor het .ogg audioformaat.</p>
+				<img src="src/caniuse_audio.png" alt="http://caniuse.com/#feat=ogg-vorbis">
+				<h4>fallback</h4>
+				<p>De fallback is simpel. Zodra het bestandstype niet ondersteund wordt zoek de browser naar het volgende source element, en gebruikt dit bestandstype. </p>
+				<xmp>
+<audio controls>
+	<source src="src/audio.ogg" type="audio/ogg">
+	<source src="src/audio.mp3" type="audio/mpeg">
+	<a href="src/audio.mp3">Download audio</a>
+</audio>
+				</xmp>
+			</section>
+
+			<section id='picture' >
+				<h3>Picture</h3>
+				<h4>Over</h4>
+				<p>De browser download enkel het de afbeelding in het formaat dat nodig is. Dit kan veel laadtijd en data schelen. </p>
+				<picture>
+				 <source 
+				    media="(min-width: 900px)"
+				    srcset="src/large.jpg">
+				  <source 
+				    media="(min-width: 650px)"
+				    srcset="src/med.jpg">
+				  <source 
+				    media="(max-width: 650px)"
+				    srcset="src/small.jpg">
+				  <img 
+				    src="src/large.jpg" 
+				    alt="Wat een mooie foto">
+				</picture>
+				<h4>browser support</h4>
+
+				<p>Het picture element wordt nog niet door alle browsers ondersteund, om deze reden is de img fallback erg belangrijk.</p>
+				<img src="src/caniuse_picture.png" alt="http://caniuse.com/#search=picture">
+				<h4>Code</h4>
+				<xmp>
+<picture>
+ <source 
+    media="(min-width: 900px)"
+    srcset="src/large.jpg">
+  <source 
+    media="(min-width: 650px)"
+    srcset="src/med.jpg">
+  <source 
+    media="(max-width: 650px)"
+    srcset="src/small.jpg">
+  <img 
+    src="src/large.jpg" 
+    alt="Wat een mooie foto">
+</picture>
+				</xmp>
+				<h4>fallback</h4>
+				<p>zodra een browser picture niet ondersteund, kan deze terugvallen aan het laatste img element. Hier kan ook de alt text toegevoegd worden. </p>
 				
-			</header>
-			<div class="fotos">
-				<img src="{{HoofdFoto}}">
-			</div>
-			<article class="omschrijving">
-			<label for='readMore'></label>
-			<input type='checkbox' id='readMore' class='readMore'></input>
-				<p id='omschrijving'>{{VolledigeOmschrijving}}</p>
-			</article>
-			<div class="kenmerken">
-				{{#each Kenmerken}}
-				<h5>{{Titel}}</h5>
-				<ul>
-					{{#each Kenmerken}}
-					<li>{{Naam}}<span>{{html_decoder Waarde}}</span></li>
-					{{/each}}
-				</ul>
-				{{/each}}
-			</div>
-			<a href="#">Neem contact op met de makelaar</a>
-		</div>
+			</section>
+		</article>
+		<article>
+			<h2>CSS</h2>
+			<section id='Viewport' >
+				<h3>Viewport</h3>
+				<h4>Over</h4>
+				<p>Viewport units worden gebruikt om een percentage van de viewport aan te kunnen duiden.</p>
+
+				<h4>browser support</h4>
+
+				<p>Viewport units worden vooral door oudere browsers slecht ondersteund.</p>
+				<img src="src/caniuse_viewport.png" alt="http://caniuse.com/#search=viewport">
+				<h4>Code</h4>
+				<xmp>
+article {
+	height: 41px;
+	height: 5.2vh;
+}
+				</xmp>
+				<h4>fallback</h4>
+				<p>Door voor de viewport units hetzelfde aan te geven in bijvoorbeeld pixels, gebruikt de browser deze als het geen viewport units kan gebruiken</p>
+			</section>
+			
+			<section id='calc' >
+				<h3>Calc</h3>
+				<h4>Over</h4>
+				<p>Calc wordt gebruikt om binnen CSS kleine berekeningen uit te kunnen voeren.</p>
+
+				<h4>browser support</h4>
+
+				<p>Calc wordt door het gros van de browsers ondersteund. Het is echter belangrijk om een goede fallback te gebruiken, anders kan de complete layout van de pagina in elkaar storten.</p>
+				<img src="src/caniuse_calc.png" alt="http://caniuse.com/#search=calc">
+				<h4>Code</h4>
+				<xmp>
+article {
+	padding-left: 50px;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+article {
+	width:calc(100%-50px);
+}
+				</xmp>
+				<h4>fallback</h4>
+				<p>Voor de fallback van calc zul je toch zelf moeten gaan rekenen. Na het maken van de fallback kun je natuurlijk ook besluiten om calc zelf te verwijderen.</p>
+			</section>
+		</article>
+		<article>
+			<h2>Javascript</h2>
+			<section id='serviceWorker' >
+				<h3>Service Worker</h3>
+				<h4>Over</h4>
+				<p>Met de Service Worker kunnen hebruikbare bestanden opgeslagen worden in de browser cache.</p>
+
+				<h4>browser support</h4>
+
+				<p>De service worker is een vrij nieuwe methode en wordt dus nog weinig ondersteund door browsers</p>
+				<img src="src/caniuse_serviceworker.png" alt="http://caniuse.com/#search=service">
+				<h4>Code</h4>
+				<xmp>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js', { scope: './' })
+    .then(function(reg) {
+      app.output('registered sw (see console)');
+      console.info('registered sw', reg);
+    })
+    .catch(function(err) {
+      app.output('error registering sw (see console)');
+      console.error('error registering sw', err);
+    });
+} else {
+  app.output('ServiceWorker is not supported');
+}
+				</xmp>
+				<h4>fallback</h4>
+				<p>Tijdens het registreren van de service worker wordt er een error message naar buiten gebracht. Er wordt dan nergens meer gebruik gemaakt van de functionaliteiten van de service worker, maar de webpagina werkt nog wel gewoon.</p>
+			</section>
+			
+			<section id='device' >
+				<h3>device oerientation</h3>
+				<h4>Over</h4>
+				<p>De device orientation kan vooral voor mobiel gebruikt worden. Op deze manier kun je er achter komen hoe de gebruikte device in de context ligt, maar bijvoorbeeld ook of deze in beweging is.</p>
+
+				<h4>browser support</h4>
+
+				<p>De device orientation wordt door de meeste browsers deels ondersteund. </p>
+				<img src="src/caniuse_device.png" alt="http://caniuse.com/#search=service">
+				<h4>Code</h4>
+				<xmp>
+(function() {
+	console.log('start');
+if (window.DeviceOrientationEvent) {
+ console.log("DeviceOrientation is supported");
+}
+else {
+	console.log('no');
+}
+}());
+}
+				</xmp>
+				<h4>fallback</h4>
+				<p>Door direct voor het uitvoeren van alle functies te controleren of de browser het wel ondersteund, kan de uitkomst aangepast worden.</p>
+			</section>
+		</article>
+	</main>
+	<script>
+
+		
 	</script>
-	<script type="text/javascript" src="static/js/libs/routie.js"></script>
-	<script type="text/javascript" src="static/js/libs/microAjax.js"></script>
-	<script type="text/javascript" src="static/js/libs/handlebars-v4.0.5.js"></script>
-
-	<script type="text/javascript" src="static/js/libs/d3.min.js"></script>
-<script type="text/javascript" src="static/js/libs/d3.tip.v0.6.3.js"></script>
-
-	<script type="text/javascript" src="static/js/router.js"></script>
-
-
-	<script type="text/javascript" src="static/js/math.js"></script>
-	<script type="text/javascript" src="static/js/api.js"></script>
-	<script type="text/javascript" src="static/js/gedrag.js"></script>
-	<script type="text/javascript" src="static/js/template.js"></script>
-	<script type="text/javascript" src="static/js/search.js"></script>
-	<script type="text/javascript" src="static/js/graph.js"></script>
-	<script type="text/javascript" src="static/js/app.js"></script>
 </body>
+
 </html>
-
-<!-- 
-TODO
-- PRIJZEN IN GOEDE FORMAT
-- INTRO/STARTPAGINA welkomsttekst>?
-- NAVIGATIE
-- BACKUP TESTLIJSTJE MET HUIZEN
-- SUPER MOOIE D3 WEERGAVE ALS PROGRESSIVE ENHANCEMENT?
-- input tag fixen
-- icon kleuren
-- fallback voor de background gradient.
-- loading gif
- -->
-
