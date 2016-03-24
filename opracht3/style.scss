@@ -1,0 +1,176 @@
+$groen: #1abc9c;
+$zwart : #1E1E1E;
+$grijs: #F1F1F1;
+
+body {
+	background-color: $grijs;
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+	font-weight: 200;
+
+		h1 {
+		margin:0;
+		padding:.5em;
+		text-align: center;
+		background-color: $groen;
+		color:white;
+		font-weight: 200;
+	}
+}
+main {
+
+	& > ul {
+		list-style-type: none;
+		padding:0;
+		margin:0;
+
+		
+		& > li {
+			padding:.5em;
+			border-top:2px solid white;
+			transition:.1s ease-in-out;
+			height:3em;
+			overflow:hidden;
+
+			transition:height .5s;
+
+
+			&:hover {
+				background-color: #DDDDDC;
+
+			}
+
+			img {
+				border-radius: 100%;
+				height:3em;
+				display: inline-block;
+				vertical-align: top;
+				
+				
+			}
+			h4 {
+				
+				margin:0;
+				padding:.5em;
+				font-weight: 200;
+				font-size: 1.2em;
+				display: inline-block;
+
+			}
+			a {
+				display: inline-block;
+				float:right;
+				padding:1em;
+				color:$groen;
+				
+			}
+
+		}
+
+		
+	}
+}
+form {
+		padding:0;
+		display: flex;
+		border-top:3px solid $grijs;
+		
+		input {
+			font-size: 1em;
+			margin:0;
+			padding:1em;
+			box-sizing:border-box;
+
+			&[type='text'] {
+				
+				height:3em;
+				vertical-align: top;
+				flex:95%;
+
+
+			}
+			&[type='button'] {
+				background-image: url('images/search.svg');
+				background-color: $groen;
+				background-repeat: no-repeat;
+				background-size: 1em;
+				background-position: center;
+				height:3em;
+				flex:5%;
+				border:none;
+			}
+		}
+	}
+.searchInfo {
+	
+	padding:.5em;
+	border-bottom:2px solid white;
+	a {
+		display: inline-block;
+		padding:.5em 1em;
+		
+		box-sizing:border-box;
+		
+	}
+	h2 {
+		display: inline-block;
+		margin:0;
+		padding-left:10vw;
+		font-weight: 400;
+
+		
+	}
+}
+#phone {
+	position: fixed;
+	bottom:0em;
+	padding:1em;
+	width:100%;
+	text-align: center;
+	visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+	box-sizing:border-box;
+	z-index: 10;
+	&.show {
+	visibility: visible;
+	opacity: 1;
+	
+}
+	a {
+		
+		display: inline-block;
+		background-color: $groen;
+	padding:1em;
+	border-radius:100%;
+	box-shadow: 0px 0px 36px -9px rgba(0,0,0,0.62);
+
+		img{
+		width:3em;
+
+	}
+	}
+}
+
+.bigLetter {
+	background-color: #DDDDDC;
+	border-top:2px solid $groen;
+	font-size:2em;
+	font-weight: lighter;
+	margin:0;
+	padding:.5em .8em;
+	position: sticky;
+	position: -webkit-sticky;
+	position: -moz-sticky;
+	position: -ms-sticky;
+	position: -o-sticky;
+	top: 0px;
+	z-index: 10;
+}
+.noResult {
+	border:none;
+	padding:0;
+	height:0px;
+
+}

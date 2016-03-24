@@ -1,0 +1,14 @@
+{
+  "name": "contact_list",
+  "version": "1.0.0",
+  "description": "Hier heb ik de contacten gegerereerd: http://beta.json-generator.com/EkqXxcspe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "latest"
+  }
+}
