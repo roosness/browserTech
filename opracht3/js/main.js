@@ -1,13 +1,10 @@
 (function () {
 	var app = {
 		init: function() {
-			console.log('start app');
 			var main = document.getElementsByTagName('main')[0].innerHTML ;
 			main= '';
-			console.log(main);
 
 			var dataset = data.get(function(dataset) {
-				console.log(dataset);
 				var html = template.init(dataset, function(html) {
 					search.init();
 					phone.open();
@@ -22,10 +19,10 @@
 
 	var data = {
 		get: function(callback) {
-			console.log('data.get');
+			
 			var request = new XMLHttpRequest();
 			request.onreadystatechange = function() {
-				console.log(request.readyState)
+				
 				if(request.readyState === 4) {
 				    if(request.status === 200) { 
 				 	
@@ -102,24 +99,24 @@
 	}
 	var phone = {
 		open: function() {
-			console.log('list');
+			
 			var people = document.getElementsByTagName('li');
 			
 			var phoneBlok = document.getElementById('phone');
 
 			var phoneLink = phoneBlok.childNodes[1];
-			console.log(phoneLink);
+			
 			[].forEach.call(people, function(show) {
 
 				show.addEventListener('click', function(event) {
-					console.log('som')
+					
 					phoneBlok.setAttribute('class', '');
 					setTimeout(function() {
 						phoneBlok.setAttribute('class', 'show');
 					}, 200)
 
 					var tel = this.childNodes[5].innerHTML;
-					console.log(tel)
+					
 					phoneLink.setAttribute('href', "tel:+"+tel+"");
 				})
 			})
