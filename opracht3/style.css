@@ -38,7 +38,7 @@ main > ul > li img {
   display: inline-block;
   vertical-align: top;
 }
-main > ul > li h4 {
+main > ul > li p {
   margin: 0;
   padding: .5em;
   font-weight: 200;
@@ -74,13 +74,14 @@ form input[type='text'] {
       -ms-flex: 95%;
           flex: 95%;
 }
-form input[type='button'] {
+button {
   background-image: url("images/search.svg");
   background-color: #1abc9c;
   background-repeat: no-repeat;
   background-size: 1em;
   background-position: center;
   height: 3em;
+  font-size:1em;
   -webkit-box-flex: 5%;
   -webkit-flex: 5%;
       -ms-flex: 5%;
