@@ -19,8 +19,30 @@ main > ul {
   padding: 0;
   margin: 0;
 }
-main > ul > li {
+main .bigLetter {
+  background-color: #DDDDDC;
+  border-top: 2px solid #1abc9c;
+  font-size: 2em;
+  font-weight: lighter;
+  margin: 0;
+  
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  
+}
+main .bigLetter ul {
+  background-color: #F1F1F1;
+  list-style:none;
+  padding: 0 0;
+}
+main .bigLetter li {
   padding: .5em;
+  font-size:.5em;
   border-top: 2px solid white;
   -webkit-transition: .1s ease-in-out;
           transition: .1s ease-in-out;
@@ -29,23 +51,37 @@ main > ul > li {
   -webkit-transition: height .5s;
           transition: height .5s;
 }
-main > ul > li:hover {
-  background-color: #DDDDDC;
-}
 main > ul > li img {
   border-radius: 100%;
   height: 3em;
   display: inline-block;
   vertical-align: top;
 }
-main > ul > li p {
+main .bigLetter p {
   margin: 0;
   padding: .5em;
   font-weight: 200;
   font-size: 1.2em;
   display: inline-block;
 }
-main > ul > li a {
+// 
+main .bigLetter  li:hover {
+  background-color: #DDDDDC;
+}
+main .bigLetter  li img {
+  border-radius: 100%;
+  height: 3em;
+  display: inline-block;
+  vertical-align: top;
+}
+main .bigLetter  li p {
+  margin: 0;
+  padding: .5em;
+  font-weight: 200;
+  font-size: 1.2em;
+  display: inline-block;
+}
+main .bigLetter  li a {
   display: inline-block;
   float: right;
   padding: 1em;
@@ -55,7 +91,6 @@ main > ul > li a {
 form {
   padding: 0;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   border-top: 3px solid #F1F1F1;
@@ -70,7 +105,6 @@ form input[type='text'] {
   height: 3em;
   vertical-align: top;
   -webkit-box-flex: 95%;
-  -webkit-flex: 95%;
       -ms-flex: 95%;
           flex: 95%;
 }
@@ -83,7 +117,6 @@ button {
   height: 3em;
   font-size:1em;
   -webkit-box-flex: 5%;
-  -webkit-flex: 5%;
       -ms-flex: 5%;
           flex: 5%;
   border: none;
@@ -133,21 +166,7 @@ button {
   width: 3em;
 }
 
-.bigLetter {
-  background-color: #DDDDDC;
-  border-top: 2px solid #1abc9c;
-  font-size: 2em;
-  font-weight: lighter;
-  margin: 0;
-  padding: .5em .8em;
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-  top: 0px;
-  z-index: 10;
-}
+
 
 .noResult {
   border: none;
