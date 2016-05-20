@@ -763,37 +763,12 @@
 			</ul>
 		</li>
 	</ul>
-	
-</main>
-
-<script id="contactList-template" type="text/x-handlebars-template">
-{{#if back}}
-<section class="searchInfo">
-	<a href="#"><img src="images/arrows.svg" alt="terug"></a>
-<h2>Je zocht naar: {{search}}</h2>
-</section>
-
-{{/if}}
-
-	<ul>
-		{{#each data}}
-		{{#if user.letter}}
-		<h3 class="bigLetter">{{user.letter}}</h3>
-		{{/if}}
-			<li class='person'>
-		
-			<img  src={{user.picture.large}} />
-				<p>{{user.name.first}} {{user.name.last}} </p>
-				<a href="tel:+{{user.cell}}">{{user.cell}}</a>
-		</li>
-		
-		{{/each}}
-	</ul>
 	<section id="phone">
 		<a href=""><img src="images/phone.svg" alt="call"></a>
 	</section>
-	</script>
-	
+</main>
+
+
 
 <script src="js/routie.js"></script>	
 <script src="js/handlebars-v4.0.5.js"></script>	
